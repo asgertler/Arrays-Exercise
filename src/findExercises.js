@@ -24,12 +24,21 @@ export const getInstructorById = (id) => {
 // It should return the student object whose last name matches `lastName`
 // It should NOT be case sensitive
 // Ex: getStudentByName("sMiTh")
+export const getStudentByLastName = (lastName) => {
+    return students.find(student => student.lastName.toUpperCase() === lastName.toUpperCase())
+}
 
 // Export a function called getStudentByName
 // It should accept one string parameter named `fullName`
 // It should return the student object whose first and last name match `fullName`
 // It should NOT be case sensitive
 // Ex: getStudentByName("Summer SMITH")
+export const getStudentByName = (fullName) => {
+    return students.find(student => {
+        const studentName = student.firstName + " " + student.lastName
+        if (studentName.toUpperCase() === fullName.toUpperCase()) return student
+    })
+}
 
 // Export a function called getInstructorOfStudent
 // It should accept one integeter parameter named `studentId`
