@@ -23,7 +23,7 @@ export const getStudentNames = () => {
 export const StudentList = () => {
   return students.map(student => {
     const studentName = student.firstName + " " + student.lastName
-    const studentCohort = "Cohort " + student.cohort
+    const studentCohort = "Cohort " + student.cohort.toString()
 
     return `
     <div>
@@ -31,5 +31,5 @@ export const StudentList = () => {
       <h2>${studentCohort}</h2>
     </div>
     `
-  })
+  }).join("")
 }
